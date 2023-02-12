@@ -66,11 +66,11 @@ public class EvoFixCommand {
 
         if (this.didEvolve(entity)) {
             for (String s : EvolutionFix.getLocale().getEvolved()) {
-                player.sendMessage(UtilChatColour.colour(s), Util.NIL_UUID);
+                player.sendMessage(UtilChatColour.colour(s.replace("%pokemon%", pokemon.getDisplayName())), Util.NIL_UUID);
             }
         } else {
             for (String s : EvolutionFix.getLocale().getNoEvolutions()) {
-                player.sendMessage(UtilChatColour.colour(s), Util.NIL_UUID);
+                player.sendMessage(UtilChatColour.colour(s.replace("%pokemon%", pokemon.getDisplayName())), Util.NIL_UUID);
             }
         }
     }
